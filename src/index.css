@@ -9,6 +9,7 @@ canvas {
     width: 70%;
     height: 70%;
     image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
 }
 
 select {
