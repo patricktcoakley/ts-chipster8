@@ -1,0 +1,47 @@
+html {
+    font-family: Verdana, serif;
+    background: rgb(40,40,40);
+    text-align: center;
+    color: rgb(200,200,200);
+}
+
+canvas {
+    width: 50%;
+    height: 50%;
+    image-rendering: crisp-edges;
+}
+
+select {
+    background: rgb(40,40,40);
+    color: white;
+}
+
+button {
+    background: rgb(50,50,50);
+    color: white;
+}
+
+#controls {
+    font-size: 1rem;
+    padding-left: 5%;
+    padding-right: 20%;
+    float: right;
+}
+
+#menu {
+    margin: 0 0 2% 0;
+}
+
+#screen {
+    border: 0.25rem solid rgb(30,30,30);
+    border-radius: 0.5rem;
+    margin-top: 1%;
+}
+
+table {
+    border: 1px solid black;
+}
+
+#romList {
+    position: relative;
+}

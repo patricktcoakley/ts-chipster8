@@ -1,0 +1,33 @@
+{
+  "name": "ts-chip8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "staticFiles": {
+    "staticPath": [
+      {
+      "staticPath": "roms",
+      "staticOutDir": "roms"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel ./src/index.html --open",
+    "build": "parcel build ./src/index.html"
+  },
+  "keywords": [],
+  "author": "Patrick T Coakley",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.0",
+    "@typescript-eslint/parser": "^4.14.0",
+    "eslint": "^7.18.0",
+    "eslint-config-google": "^0.14.0",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "parcel-plugin-static-files-copy": "^2.5.0"
+  }
+}

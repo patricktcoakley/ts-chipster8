@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chipster8</title>
+</head>
+<body>
+<div id="controls">
+    <h3>Controls</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Chip8</th>
+            <th>Chipster8</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Q</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>W</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>E</td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>R</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>S</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>Z</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>X</td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>C</td>
+        </tr>
+        <tr>
+            <td>F</td>
+            <td>V</td>
+        </tr>
+        </tbody>
+        <thead>
+        <tr>
+        </tr>
+        </thead>
+    </table>
+</div>
+<div id="app">
+    <h1>Chipster8</h1>
+    <div>
+        <label for="romList">Titles
+            <select name="roms" id="romList">
+                <option disabled selected value>Select a title...</option>
+                <option value="15PUZZLE.ch8">15PUZZLE</option>
+                <option value="BLINKY.ch8">BLINKY</option>
+                <option value="BLITZ.ch8">BLITZ</option>
+                <option value="BRIX.ch8">BRIX</option>
+                <option value="CONNECT4.ch8">CONNECT4</option>
+                <option value="GUESS.ch8">GUESS</option>
+                <option value="HIDDEN.ch8">HIDDEN</option>
+                <option value="INVADERS.ch8">INVADERS</option>
+                <option value="KALEID.ch8">KALEID</option>
+                <option value="MAZE.ch8">MAZE</option>
+                <option value="MERLIN.ch8">MERLIN</option>
+                <option value="MISSILE.ch8">MISSILE</option>
+                <option value="PONG.ch8">PONG</option>
+                <option value="PONG2.ch8">PONG2</option>
+                <option value="PUZZLE.ch8">PUZZLE</option>
+                <option value="SYZYGY.ch8">SYZYGY</option>
+                <option value="TANK.ch8">TANK</option>
+                <option value="TETRIS.ch8">TETRIS</option>
+                <option value="TICTAC.ch8">TICTAC</option>
+                <option value="UFO.ch8">UFO</option>
+                <option value="VBRIX.ch8">VBRIX</option>
+                <option value="VERS.ch8">VERS</option>
+                <option value="WIPEOFF.ch8">WIPEOFF</option>
+                <option value="SCTEST.ch8">SCTEST</option>
+            </select>
+        </label>
+        <label for="speed">Speed
+            <select name="roms" id="speed">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </label>
+        <label for="colors">Colors
+            <select name="colors" id="colors">
+                <option value="0">White on Blue</option>
+                <option value="1">Green on Black</option>
+                <option value="2">Black on Green</option>
+            </select>
+        </label>
+        <button id="reset">Reset</button>
+        <button id="pause">Pause</button>
+    </div>
+    <canvas id="screen" width="64" height="32"></canvas>
+</div>
+
+<script src="index.ts" type="application/javascript"></script>
+
+</body>
+<link rel="stylesheet" href="./index.css"/>
+</html>
