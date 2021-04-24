@@ -1,5 +1,5 @@
 # ts-chipster8
-Just a quick port of [Chipster8](https://github.com/patricktcoakley/Chipster8). Try it [here](https://xenodochial-mirzakhani-5ada03.netlify.app/).
+Just a quick port of [Chipster8](https://github.com/patricktcoakley/Chipster8). Try it [here](https://chipster8.netlify.app/).
 
 ## Usage
 This project uses Parcel, so all that needs to be done is:
