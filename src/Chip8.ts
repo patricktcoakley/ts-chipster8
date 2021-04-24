@@ -87,6 +87,7 @@ export class Chip8 {
         if (this.ST > 0) {
             --this.ST;
         }
+
     }
 
     execute() {

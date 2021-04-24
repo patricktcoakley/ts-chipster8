@@ -6,9 +6,9 @@ html {
 }
 
 canvas {
-    width: 50%;
-    height: 50%;
-    image-rendering: crisp-edges;
+    width: 70%;
+    height: 70%;
+    image-rendering: pixelated; // Chromium
 }
 
 select {
@@ -21,13 +21,6 @@ button {
     color: white;
 }
 
-#controls {
-    font-size: 1rem;
-    padding-left: 5%;
-    padding-right: 20%;
-    float: right;
-}
-
 #menu {
     margin: 0 0 2% 0;
 }
@@ -38,10 +31,98 @@ button {
     margin-top: 1%;
 }
 
+.controllerButton {
+    background: white;
+    color: black;
+    width: 3rem;
+    height: 3rem;
+    border: 0.25rem solid rgb(30,30,30);
+    border-radius: 0.25rem;
+}
+
 table {
     border: 1px solid black;
 }
 
 #romList {
     position: relative;
+}
+
+#controller {
+    display: none;
+}
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+    #screen {
+        margin-top: 9%;
+    }
+
+    canvas {
+        width: 90%;
+        height: 90%;
+    }
+
+    #controller {
+        margin-top: 10%;
+        display: block;
+    }
+
+    .controllerButton {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+    #screen {
+        margin-top: 9%;
+    }
+
+    canvas {
+        width: 90%;
+        height: 90%;
+    }
+
+    #controller {
+        margin-top: 10%;
+        display: block;
+    }
+
+    .controllerButton {
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 812px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: portrait) {
+    #screen {
+        margin-top: 9%;
+    }
+
+    canvas {
+        width: 90%;
+        height: 90%;
+    }
+
+    #controller {
+        margin-top: 10%;
+        display: block;
+    }
+
+    .controllerButton {
+        width: 5rem;
+        height: 5rem;
+    }
 }

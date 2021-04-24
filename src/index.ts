@@ -13,8 +13,14 @@ let chip8 = new Chip8();
 let timerId = -1;
 let colorIndex = 0;
 
+document.querySelectorAll('.controllerButton')
+    .forEach(button => button.addEventListener('click', event => {
+        document.dispatchEvent(new KeyboardEvent('keydown', {key: (<HTMLButtonElement>button).value}));
+        setTimeout(() => document.dispatchEvent(new KeyboardEvent('keyup', {key: (<HTMLButtonElement>button).value})), 200)
+    }));
+
+
 document.addEventListener('keydown', event => {
-    event.preventDefault();
     switch (event.key) {
         case '1':
             chip8.Keypad[0] = 1;
@@ -80,22 +86,22 @@ document.addEventListener('keyup', event => {
     chip8.Keypad.fill(0);
 });
 
-document.getElementById('romList')!.addEventListener('change', async () => {
+async function start() {
     const title = getTitle();
     if (!title) {
         return;
     }
     chip8 = new Chip8();
     return await loadTitle(title);
+}
+
+
+document.getElementById('romList')!.addEventListener('change', async () => {
+    await start();
 });
 
 document.getElementById('reset')!.addEventListener('click', async () => {
-    const title = getTitle();
-    if (!title) {
-        return;
-    }
-    chip8 = new Chip8();
-    return await loadTitle(title);
+    await start();
 });
 
 document.getElementById('pause')!.addEventListener('click', () => {
