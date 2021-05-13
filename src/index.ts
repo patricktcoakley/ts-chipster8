@@ -1,12 +1,14 @@
-import {Chip8} from './Chip8';
+import {Chip8} from './chip8';
 import 'regenerator-runtime/runtime';
 
-const canvas: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById('screen');
-const ctx = canvas.getContext('2d');
+const Canvas = <HTMLCanvasElement>document.getElementById('screen');
+const Context = <CanvasRenderingContext2D>Canvas.getContext('2d');
+const ImageData = Context.getImageData(0, 0, Canvas.width, Canvas.height);
+const CanvasBuffer = ImageData.data;
 const Colors = [
-    [`rgb(255, 255, 255)`, `rgb(100, 149, 237)`],
-    [`rgb(15, 56, 15)`, `rgb(255, 255, 255)`],
-    [`rgb(0, 0, 0)`, `rgb(155, 188, 15)`],
+    [[255, 255, 255], [100, 149, 237]],
+    [[15, 56, 15], [255, 255, 255]],
+    [[0, 0, 0], [155, 188, 15]],
 ];
 
 let chip8 = new Chip8();
@@ -95,7 +97,6 @@ async function start() {
     return await loadTitle(title);
 }
 
-
 document.getElementById('romList')!.addEventListener('change', async () => {
     await start();
 });
@@ -161,9 +162,13 @@ function run(speed: number) {
     timerId = setTimeout(() => run(speed), 0);
 }
 
-function writePixel(x: number, y: number, color: string) {
-    ctx!.fillStyle = color;
-    ctx!.fillRect(x, y, 1, 1);
+function writePixel(x: number, y: number, color: number[]) {
+    const offset = Canvas.width * 4 * y + x * 4;
+
+    CanvasBuffer[offset] = color[0];
+    CanvasBuffer[offset+1] = color[1];
+    CanvasBuffer[offset+2] = color[2];
+    CanvasBuffer[offset+3] = 255;
 }
 
 function draw() {
@@ -173,4 +178,6 @@ function draw() {
             writePixel(x, y, color);
         }
     }
+
+    Context!.putImageData(ImageData, 0, 0);
 }
