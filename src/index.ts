@@ -1,5 +1,4 @@
 import {Chip8} from './chip8';
-import 'regenerator-runtime/runtime';
 
 const Canvas = <HTMLCanvasElement>document.getElementById('screen');
 const Context = <CanvasRenderingContext2D>Canvas.getContext('2d');
@@ -16,7 +15,7 @@ let timerId = -1;
 let colorIndex = 0;
 
 document.querySelectorAll('.controllerButton')
-    .forEach(button => button.addEventListener('click', event => {
+    .forEach(button => button.addEventListener('click', _ => {
         document.dispatchEvent(new KeyboardEvent('keydown', {key: (<HTMLButtonElement>button).value}));
         setTimeout(() => document.dispatchEvent(new KeyboardEvent('keyup', {key: (<HTMLButtonElement>button).value})), 200)
     }));
@@ -84,7 +83,7 @@ document.addEventListener('keydown', event => {
     }
 });
 
-document.addEventListener('keyup', event => {
+document.addEventListener('keyup', _ => {
     chip8.Keypad.fill(0);
 });
 

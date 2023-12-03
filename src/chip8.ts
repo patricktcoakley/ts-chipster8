@@ -1,4 +1,5 @@
-export class Chip8 {
+export class Chip8 { 
+    private readonly debugConsole = (msg: string) => {console.debug(msg)};
     readonly VideoHeight = 0x20;
     readonly VideoWidth = 0x40;
     readonly ProgramStartAddress = 0x200;
@@ -24,7 +25,7 @@ export class Chip8 {
         ]
     );
 
-    DrawFlag: boolean = false;
+    DrawFlag = false;
     I = 0;
     PC = this.ProgramStartAddress;
     SP = 0;
@@ -37,7 +38,7 @@ export class Chip8 {
     Video: Uint8Array = new Uint8Array(2048);
     Opcode = 0;
     ShouldRun = true;
-    ProgramSize: number = 0;
+    ProgramSize = 0;
 
     get VF(): number {
         return this.Registers[0xF];
@@ -47,11 +48,10 @@ export class Chip8 {
         this.Registers[0xF] = value;
     }
 
-    constructor(debug: boolean = false) {
-        if (debug) {
-            this.debugConsole = (msg: string) => console.debug(msg);
+    constructor() {
+        if (!import.meta.env.DEV) {
+            this.debugConsole = () => { return; };
         }
-
 
         for (let i = 0; i < this.Fonts.length; ++i) {
             this.Memory[i] = this.Fonts[i];
@@ -61,8 +61,6 @@ export class Chip8 {
     shouldDrawColor = (x: number, y: number) => this.Video[x + (this.VideoWidth * y)] !== 0;
     randomByte = () => Math.random() * Math.floor(0xFF);
     isRunning = () => this.PC < this.ProgramSize + this.ProgramStartAddress && this.ShouldRun;
-    private readonly debugConsole = (msg: string) => {
-    };
 
     loadRom(bytes: ArrayBuffer) {
         const uintBuffer = new Uint8Array(bytes);
