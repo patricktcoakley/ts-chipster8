@@ -9,7 +9,11 @@ canvas {
     width: 68%;
     height: 68%;
     image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
+    image-rendering: -moz-crisp-edges;   
+}
+
+canvas:focus {
+    outline: none;
 }
 
 select {
